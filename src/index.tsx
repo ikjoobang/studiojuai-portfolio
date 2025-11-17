@@ -359,13 +359,13 @@ app.get('/', (c) => {
                 right: 24px;
                 width: 60px;
                 height: 60px;
-                background: #FF6B35;
+                background: #000000;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
-                box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
                 z-index: 999;
                 transition: all 0.3s ease;
             }
@@ -397,7 +397,7 @@ app.get('/', (c) => {
     </head>
     <body class="bg-white text-black">
         <!-- Hero Section -->
-        <section class="section-spacing" style="background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);">
+        <section class="section-spacing" style="background: #000000;">
             <div class="max-w-6xl mx-auto px-6 text-center text-white">
                 <h1 class="headline mb-6">Video Portfolio</h1>
                 <p class="body-text mb-8 max-w-2xl mx-auto opacity-95">
@@ -436,7 +436,7 @@ app.get('/', (c) => {
                     프로젝트 문의나 협업 제안은 언제든지 환영합니다
                 </p>
                 <div class="flex flex-col items-center gap-4">
-                    <a href="mailto:studio.ikjoo@gmail.com" class="emphasis text-black hover:text-[#FF6B35] transition-colors">
+                    <a href="mailto:studio.ikjoo@gmail.com" class="emphasis text-black hover:text-gray-600 transition-colors">
                         <i class="fas fa-envelope mr-3"></i>
                         studio.ikjoo@gmail.com
                     </a>
@@ -448,7 +448,7 @@ app.get('/', (c) => {
         <footer class="bg-black text-white py-8">
             <div class="max-w-7xl mx-auto px-6 text-center">
                 <p class="body-text">
-                    <a href="https://studiojuai.club" class="hover:text-[#FF6B35] transition-colors">studiojuai.club</a> | 
+                    <a href="https://studiojuai.club" class="hover:text-gray-400 transition-colors">studiojuai.club</a> | 
                     studio.ikjoo@gmail.com | 
                     © 2025. ALL RIGHTS RESERVED.
                 </p>
@@ -462,7 +462,7 @@ app.get('/', (c) => {
 
         <!-- Chatbot Container -->
         <div id="chatbot-container">
-            <div class="bg-gradient-to-r from-[#FF6B35] to-[#FF8C42] p-4 rounded-t-2xl flex justify-between items-center">
+            <div class="bg-black p-4 rounded-t-2xl flex justify-between items-center">
                 <h3 class="text-white font-bold">문의 챗봇</h3>
                 <button onclick="toggleChatbot()" class="text-white hover:text-gray-200">
                     <i class="fas fa-times"></i>
@@ -479,12 +479,12 @@ app.get('/', (c) => {
                         type="text" 
                         id="chat-input" 
                         placeholder="메시지를 입력하세요..."
-                        class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF6B35]"
+                        class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
                         onkeypress="if(event.key === 'Enter') sendMessage()"
                     />
                     <button 
                         onclick="sendMessage()"
-                        class="bg-[#FF6B35] text-white px-4 py-2 rounded-lg hover:bg-[#FF8C42] transition-colors"
+                        class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
                     >
                         <i class="fas fa-paper-plane"></i>
                     </button>
@@ -554,7 +554,7 @@ app.get('/', (c) => {
                 // Add user message
                 messagesDiv.innerHTML += \`
                     <div class="mb-3 text-right">
-                        <div class="inline-block bg-[#FF6B35] text-white px-4 py-2 rounded-lg max-w-[80%]">
+                        <div class="inline-block bg-black text-white px-4 py-2 rounded-lg max-w-[80%]">
                             \${message}
                         </div>
                     </div>
