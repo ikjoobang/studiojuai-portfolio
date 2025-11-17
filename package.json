@@ -1,0 +1,32 @@
+{
+  "name": "studiojuai-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:sandbox": "wrangler pages dev dist --d1=studiojuai-portfolio-db --local --ip 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "preview": "wrangler pages dev",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name studiojuai-portfolio",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "db:create": "wrangler d1 create studiojuai-portfolio-db",
+    "db:migrate:local": "wrangler d1 migrations apply studiojuai-portfolio-db --local",
+    "db:migrate:prod": "wrangler d1 migrations apply studiojuai-portfolio-db",
+    "db:console:local": "wrangler d1 execute studiojuai-portfolio-db --local",
+    "db:console:prod": "wrangler d1 execute studiojuai-portfolio-db",
+    "r2:create": "wrangler r2 bucket create studiojuai-videos",
+    "clean-port": "fuser -k 3000/tcp 2>/dev/null || true",
+    "git:init": "git init && git add . && git commit -m 'Initial commit'",
+    "git:commit": "git add . && git commit -m"
+  },
+  "dependencies": {
+    "hono": "^4.10.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250705.0",
+    "@hono/vite-build": "^1.2.0",
+    "@hono/vite-dev-server": "^0.18.2",
+    "vite": "^6.3.5",
+    "wrangler": "^4.4.0"
+  }
+}
